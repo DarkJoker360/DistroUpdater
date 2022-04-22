@@ -4,7 +4,7 @@ import configparser, os
 from datetime import datetime
 
 if __name__ == "__main__":
-    version = "1.0"
+    version = "1.1"
     config_path = "~/.config/distro-updater/config.ini"
 
     if not os.path.exists(config_path):
