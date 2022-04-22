@@ -24,7 +24,7 @@ if __name__ == "__main__":
                         return False
                 case "weekly":
                     if int(last_updated[8:10]) < int(current_date[8:10]):
-                        if int(current_date[8:10]) - int(last_updated[8:10]) > 7:
+                        if int(current_date[8:10]) - int(last_updated[8:10]) >= 7:
                             return False
                 case "daily":
                     if int(last_updated[9:10]) < int(current_date[9:10]):
