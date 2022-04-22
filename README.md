@@ -19,3 +19,10 @@ git clone https://github.com/DarkJoker360/DistroUpdater
 cd DistroUpdater
 ./install.sh
 ```
+
+## Update
+```bash
+git clone https://github.com/DarkJoker360/DistroUpdater
+cd DistroUpdater
+./update.sh
+```
