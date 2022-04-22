@@ -37,29 +37,13 @@ if __name__ == "__main__":
         print("Updating now...")
         match configs["configuration"]["pkg_manager"]:
             case "apt":
-                if os.system("sudo apt-get update -y") == 0:
-                    if os.system("sudo apt-get upgrade") == 0:
-                        return True
-                    else:
-                        return False
-                else:
-                        return False
+                return os.system("sudo apt-get update -y") == 0 and os.system("sudo apt-get upgrade") == 0
             case "dnf":
-                if os.system("sudo dnf upgrade") == 0:
-                    return True
-                else:
-                    return False
+                return os.system("sudo dnf upgrade") == 0
             case "pacman":
-                if os.system("sudo pacman -Syu") == 0:
-                    if os.system("yay -Syu") == 0:
-                        return True
-                else:
-                    return False
+                return os.system("sudo pacman -Syu") == 0 and os.system("yay -Syu") == 0
             case "yum":
-                if os.system("sudo yum upgrade") == 0:
-                    return True
-                else:
-                    return False
+                return os.system("sudo yum upgrade") == 0
 
     current_date = datetime.now().strftime("%Y-%m-%d")
     configs = configparser.ConfigParser()
